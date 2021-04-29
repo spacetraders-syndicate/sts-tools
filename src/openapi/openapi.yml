@@ -11,8 +11,8 @@ servers:
   - url: https://staging.api.spacetraders.io
     description: Staging
 paths:
-  /users/{username}/token:
-    $ref: ./paths/usersToken.yml
+  /first:
+    $ref: ./paths/first.yml
 
 components:
   securitySchemes:
@@ -24,4 +24,3 @@ security:
   - bearerAuth: []
 
 tags:
-  - name: users

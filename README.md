@@ -8,6 +8,7 @@ tools
 ## First run
 ```
 npm i -g npm
+npm i @spacetraders-syndicate/openapi-sdk
 npm i
 ```
 
