@@ -1,0 +1,27 @@
+openapi: 3.0.1
+info:
+  title: SpaceTraders Tools
+  description: A SpaceTraders.io API Tools
+  version: 1.0.1
+  contact:
+    email: spacetraders.syndicate@gmail.com
+servers:
+  - url: https://api.spacetraders.io
+    description: Production
+  - url: https://staging.api.spacetraders.io
+    description: Staging
+paths:
+  /users/{username}/token:
+    $ref: ./paths/usersToken.yml
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      bearerFormat: 'Bearer {token}'
+      scheme: bearer
+security:
+  - bearerAuth: []
+
+tags:
+  - name: users
