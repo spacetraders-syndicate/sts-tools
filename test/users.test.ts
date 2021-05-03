@@ -16,5 +16,6 @@ describe('user', () => {
         const response = newUserAndConfiguration();
         config = (await response).config;
         user = (await response).user;
+        expect(user.user.username.length).toBeGreaterThanOrEqual;
     });
 });

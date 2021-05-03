@@ -12,13 +12,16 @@ export async function newUser(username?: string): Promise<User> {
 
     const usersClient = new UsersApi(configuration);
     const user = await usersClient.createUserToken({
-        username: username ? username : faker.datatype.uuid(),
+        username: typeof username !== 'undefined' ? username : faker.datatype.uuid(),
     });
     return user.data;
 }
 
-export async function newUserAndConfiguration(user?: User): Promise<{ user: User; config: Configuration }> {
-    if (!user) user = await newUser();
+export async function newUserAndConfiguration(
+    user?: User,
+    username?: string,
+): Promise<{ user: User; config: Configuration }> {
+    if (!user) user = await newUser(username);
 
     const config = new Configuration({
         accessToken: user.token,
