@@ -1,35 +1,27 @@
 {
-    "scripts": {
-        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-        "prettier": "prettier --write .",
-        "build": "tsc",
-        "watch": "tsc -w",
-        "codegen": "openapi-generator-cli generate -i ./openapi.json -o ./src/sdk -g typescript-axios -p typescriptFourPlus=true -p useSingleRequestParameter=true -p supportsES6=true -p npmName=@spacetraders-syndicate/openapi-sdk && npx replace-in-file \"/* tslint:disable */\" \"/* tslint:disable */ // @ts-nocheck */\" src/sdk/*",
-        "test": "jest"
-    },
-    "devDependencies": {
-        "@openapitools/openapi-generator-cli": "^2.2.6",
-        "@redocly/openapi-cli": "^1.0.0-beta.44",
-        "@types/faker": "^5.5.3",
-        "@types/jest": "^26.0.23",
-        "@typescript-eslint/eslint-plugin": "^4.22.0",
-        "@typescript-eslint/parser": "^4.22.0",
-        "eslint": "^7.25.0",
-        "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-prettier": "^3.4.0",
-        "faker": "^5.5.3",
-        "npm-check-updates": "^11.5.4",
-        "openapi-types": "^8.0.0",
-        "prettier": "^2.2.1",
-        "redoc-cli": "^0.11.4",
-        "replace-in-file": "^6.2.0",
-        "ts-jest": "^26.5.5",
-        "ts-node": "^9.1.1",
-        "typescript": "^4.2.4"
-    },
-    "dependencies": {
-        "@spacetraders-syndicate/openapi-sdk": "^1.0.1",
-        "jest": "^26.6.3"
-    }
+  "name": "sts-tools",
+  "version": "0.1.0",
+  "bin": {
+    "sts-tools": "bin/sts-tools.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.104.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "aws-cdk": "1.104.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "1.104.0",
+    "source-map-support": "^0.5.16"
+  }
 }
